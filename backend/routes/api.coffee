@@ -1,5 +1,5 @@
 express = require 'express'
-fake = require 'faker'
+fake = require 'Faker'
 
 users = []
 
