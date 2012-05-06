@@ -1,0 +1,19 @@
+{
+  "author": "Todd Larsen <toddlar@gmail.com>",
+  "name": "json-api",
+  "description": "Dummy JSON API for Code Academy JS Class",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": {
+    "coffee-script":"",
+    "express":"",
+    "Faker":""
+  },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
