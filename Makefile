@@ -1,2 +1,2 @@
 dev-server:
-	sh -c ". node_modules/.bin/coffee backend/server"
+	sh -c ". environment.sh && node_modules/.bin/coffee backend/server"
