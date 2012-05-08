@@ -1,26 +1,27 @@
 express = require 'express'
 fake = require 'Faker'
 
-tweets = []
-
 getLastName = (name) ->
   parts = name.split(/\s+/)
   parts[ parts.length - 1 ]
 
-[0..10].forEach (num, i) ->
-  fullName = fake.Name.findName()
-  handle = "@#{ getLastName(fullName).toLowerCase() }"
+constructJsonResponse = ->
+  tweets = []
+  [0..10].forEach (num, i) ->
+    fullName = fake.Name.findName()
+    handle = "@#{ getLastName(fullName).toLowerCase() }"
 
-  tweet =
-    user:
-      handle: handle
-      fullName: fullName
-    message: fake.Lorem.sentence()
+    tweet =
+      user:
+        handle: handle
+        fullName: fullName
+      message: fake.Lorem.sentence()
 
-  tweets.push tweet
+    tweets.push tweet
 
+  tweets
 
 module.exports = routes = express.createServer()
 
 routes.get '/tweets', (req, res, next) ->
-  res.send tweets
+  res.send constructJsonResponse()
