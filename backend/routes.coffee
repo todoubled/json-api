@@ -6,3 +6,4 @@ module.exports = routes = express.createServer()
 routes.use mw.allowCrossDomain
 routes.use require './routes/static'
 routes.use require './routes/api'
+routes.use require './routes/tweets'
